@@ -1,0 +1,306 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background: linear-gradient(45deg, rgba(121, 11, 82, 1) 30%, white 70%);
+
+}
+header{
+  padding-top: 26px; 
+  padding-bottom:6px ;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1440px;
+  margin: auto;
+  z-index:100; 
+  
+  background-color:rgb(129, 50, 95) ; 
+
+
+  .logo-holder{
+      display: flex;
+      padding: 6px;
+      align-items: center;
+      font-weight:600 ;
+
+  }
+}    
+
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;/*from align to fontsize helps center the letter*/
+  font-size: 32px;
+  /* background-color: rgb(8, 8, 8) ; */
+  color:#f1f1f1 ;
+  height: 64px;
+  width: 64px ;
+  margin-right:20px ;
+  border-radius: 50% ;
+  background-image: url(assets/sa\ flag.jpeg);
+
+}
+
+.logo-text{
+  flex: 1;
+  color:#f1f1f1 ;
+}
+
+header a{
+  margin-right: 40px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  ul{
+    display: flex; 
+    list-style-type: none;  /*helps remove the list alginment*/
+    gap: 5px;
+
+      li  {
+          display:inline-block ;
+          a {
+              display: inline-block;
+              padding: 10px 20px; /*space between*/
+              color:#000000 ;
+              &:hover{
+                 background-color:white ; 
+                 border-radius: 10px; /*gives curvers to hover square*/
+                 text-decoration: none;
+
+              }
+          }
+      }  
+  }
+} 
+
+/* Burger Menu (Hidden by Default) */
+#burger-menu {
+display: none;
+flex-direction: column;
+cursor: pointer;
+gap: 5px;
+}
+
+#burger-menu div {
+width: 25px;
+height: 3px;
+background-color: #000;
+}
+
+/* Media Queries for Mobile */
+@media screen and (max-width: 768px) {
+/* Hide the regular menu and display the burger menu */
+
+#burger-menu {
+  display: flex;
+} 
+
+nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #fff;
+    width: 100%;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+nav ul.active {
+  display: flex;
+  text-align: center; /* Center text when responsive */
+
+}
+
+nav ul li {
+width: 100%; /* Make each menu item take full width in mobile view */
+}
+
+nav ul li a {
+width: 100%; /* Ensure the hover effect spans the full width */
+&:hover {
+    background-color: white;
+    border-radius: 0; /* Remove the rounded corners for full width hover */
+}
+}
+}
+
+.about1{
+    margin: 30px;
+    padding: 5px;
+}
+
+.about1 h1{
+    text-align: center;
+    color: black;
+    font-weight: bold;
+}
+.about1 p{
+    text-align:center ;
+    padding: 3px;
+}
+
+/* Card Style */
+.aboutItem {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Hover effect for cards */
+.aboutItem:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.col4 {
+    flex: 1 1 calc(33.333% - 20px); /* 3 columns, with some spacing */
+    margin: 10px;
+}
+
+.textCenter {
+    text-align: center;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+
+h3 {
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+}
+
+hr {
+    width: 50%;
+    margin: 10px auto;
+}
+
+/*FOOTER*/
+.footer{
+    background: #2b222a;
+    color: #8a8a8a;
+    font-size: 14px;
+    padding: 60px 0 20px;
+  }
+  
+  .container-footer {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  
+  .footer-col-1, .footer-col-2, .footer-col-3, .footer-col-4 {
+    flex-basis: 23%;
+    margin-bottom: 20px;
+  }
+  
+  .footer-col-1 img, .footer-col-2 img {
+    width: 100%;
+    max-width: 150px;
+  }
+  
+  .footer h3 {
+    margin-bottom: 10px;
+  }
+  
+  .footer ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .footer ul li {
+    margin-bottom: 10px;
+  }
+  
+  
+  .footer p{
+    color:#8a8a8a;
+  }
+  
+  .app-logo{
+    margin-top: 20px;
+  }
+  
+  .app-logo img{
+    width: 140px;
+  }
+  
+  
+  .footer h3{
+    color:#fff;
+    margin-bottom: 20px;
+  }
+  
+  .footer-col-1, .footer-col-2, .footer-col-3, .footer-col-4{
+    min-width: 250px;
+    margin-bottom: 20px;
+  }
+   
+  .footer-col-2 img{
+    width:180px;
+    margin-bottom:20px;
+  }
+  
+  .footer-col-3, .footer-col-4{
+    flex-basis:12% ;
+    text-align: center;
+  
+  }
+  
+  
+  hr{
+    border:none;
+    border-top: 1px solid #555;
+  
+    margin: 20px 0;
+  }
+  
+  .copyright{
+    text-align: center;
+    margin-top: 20px;
+    color: #bbb;
+  }
+  
+  
+   
+  
+  
+  
+  
+  
+  
+  
+   

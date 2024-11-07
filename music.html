@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="music.css">
+    <script src="https://kit.fontawesome.com/157fdf8a34.js" crossorigin="anonymous"></script>
+    <title>ILLA-Music Player</title>
+</head>
+<body>
+    <div class="container">
+       <div class="music-player">
+        <nav>
+            <div class="circle">
+                <i class="fa-solid fa-angle-left"></i>  
+            </div>
+            <!-- <div class="circle">
+                <i class="fa-solid fa-angle-right"></i>
+            </div> -->
+            <div class="circle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
+        <img  class="song-img" src="assets/full of thanks.png">
+        <h1>Full Of Thanks</h1>
+        <p>Nikosi</p>
+
+        <audio id="song">
+            <source src="music/Full Of Thanks-Nikosi.mp3" type="audio/mpeg">
+        </audio>
+        <input type="range" value="0" id="progress">
+
+        <div class="controls">
+            <div><i class="fa-solid fa-backward"></i></div>
+            <div onclick="playPause()"><i class="fa-solid fa-play" id="ctrlIcon"></i></div>
+            <div><i class="fa-solid fa-forward"></i></div>
+             
+        </div>
+
+        <!-- <img src="assets/louieX cover music.png"> -->
+       </div> 
+    </div>
+    
+    <script src="music.js"></script>
+</body>
+</html>

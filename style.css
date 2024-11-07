@@ -1,0 +1,632 @@
+@import url('https://fonts.googleapis.com/css2?family=Lacquer&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin:0 ;
+    padding: 0;
+}
+
+:root {
+  --primary-color:#81325f;
+  --button-color:#790b52;
+  --primary-fonts:#adf222;
+  --fonts-color: #f0f8ff;
+  --black-color:#000000; 
+  --footerbr-color: #555;
+  --column-p:#bbb;
+  --box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+
+body{
+  font-family: "Lacquer", serif;
+  color:var(--fonts-color);
+  margin: 0;
+  font-size: 16px;
+} 
+
+.pt-sans-regular-italic {
+  font-family: "PT Sans", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+
+.centerCol{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.centerCol p{
+  font-size: 18px;
+  color: #bbb;
+  font-weight: 400;
+}
+
+.no-slide{
+  width: 80px;
+  cursor: pointer;
+}
+
+ 
+
+a{
+    text-decoration: none;  /*remove underlines*/
+    color: aliceblue; 
+    &:hover{
+        text-decoration: underline; /*added a hover bc it was removed during removing the default underline*/
+    }   
+}
+aside{
+    padding-top: 26px; 
+    padding-bottom:6px ;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1440px;
+    margin: auto;
+    z-index:100; 
+    
+    /* background-color:#81325f ;  */
+
+
+    /* .logo-holder{
+        display: flex;
+        padding: 6px;
+        align-items: center;
+        font-weight:600 ; */
+ 
+}
+
+header{
+  padding-top: 26px; 
+  padding-bottom:6px ;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1440px;
+  margin: auto;
+  z-index:100; 
+
+  .logo-holder{
+    display: flex;
+    padding: 6px;
+    align-items: center;
+    font-weight:600 ;
+   }
+
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;  /* from align to fontsize helps center the letter  */
+  height: 34px;
+  width: 34px ;
+  margin-right:20px ;
+  padding-left: 35px;
+}
+
+.logo-text{
+    flex: 1;
+    color:var(--primary-color) ;
+    font-size: 32px;
+}
+
+header a{
+    margin-right: 40px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    ul{
+      display: flex; 
+      list-style-type: none;  /*helps remove the list alginment*/
+      gap: 5px;
+
+        li  {
+            display:inline-block ;
+            a {
+                display: inline-block;
+                padding: 10px 20px; /*space between*/
+                color:#000000 ;
+                &:hover{
+                   background-color:white ; 
+                   border-radius: 10px; /*gives curvers to hover square*/
+                   text-decoration: none;
+
+                }
+            }
+        }  
+    }
+} 
+
+/* Burger Menu (Hidden by Default) */
+#burger-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+#burger-menu div {
+  width: 25px;
+  height: 3px;
+  background-color: #000;
+}
+
+/* Media Queries for Mobile */
+@media screen and (max-width: 768px) {
+  /* Hide the regular menu and display the burger menu */
+
+  #burger-menu {
+    display: flex;
+} 
+
+  nav ul {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background-color: #fff;
+      width: 100%;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  nav ul.active {
+    display: flex;
+    text-align: center; /* Center text when responsive */
+
+}
+
+nav ul li {
+  width: 100%; /* Make each menu item take full width in mobile view */
+}
+
+nav ul li a {
+  width: 100%; /* Ensure the hover effect spans the full width */
+  &:hover {
+      background-color: white;
+      border-radius: 0; /* Remove the rounded corners for full width hover */
+  }
+}
+
+
+  
+
+  /* Show the mobile menu when the burger menu is clicked */
+  #burger-menu.active + ul {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background-color: #fff;
+      width: 100%;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  nav ul li {
+      margin-bottom: 10px;
+  }
+}
+
+
+.hero {
+    background: rgba(0, 0, 0, 0.60);
+    color: var(--fonts-color);
+    text-align: center;
+    /* padding: 20em 0; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Full viewport height */
+    text-align: center;
+    /* padding: 0 20px; Optional padding for mobile responsiveness */
+    position:relative;
+    overflow: hidden;/*the vid when positioning goes over the hero, this crops it*/
+    min-height: 65vh;
+}
+
+.vid-bg{
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.card {
+   /* width: 400px; */
+  width: 400px; /* Adjust card width */
+  height: 250px; /* Adjust card height */
+  margin: 25%; /* Optional: add a margin to create space around each card */
+  
+} 
+
+
+.card__content{
+  text-align: center;
+  position: relative;
+  padding: 15em 5em;
+  transition: transform 3s;
+  transform-style: preserve-3d;
+ 
+}
+
+.card:hover .card__content{
+  transform: rotateY(.5turn);
+}
+
+.card__front,
+.card__back{
+  position: absolute;/*they need to be over each other*/
+  left: 0 ;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 2em;
+  backface-visibility: hidden;
+  transform-style: preserve-3d ;
+  display: grid;
+  align-content: center;
+
+}
+
+.card__subtitle{
+  transform: translateZ(4rem);
+  /*sans font*/
+}
+
+.card__title{
+  font-size: 3rem;
+  transform: translateZ(6rem);
+}
+
+.card__body{
+  transform: translateZ(2rem);
+  /* display: grid;
+  place-items: center; */
+}
+
+.card__back{
+  transform: rotateY(.5turn);
+  background: #81325f;
+
+}
+
+.card__front {
+  background-size: cover;
+  background-blend-mode: overlay;
+  color: #333;
+}
+.card0 .card__front {
+  background-image: url(assets/Covermusic.png);
+}
+
+.card1 .card__front {
+  background-image: url(assets/Conertcover2.png);
+}
+
+.card2 .card__front {
+  background-image: url(assets/Covernecklace.png);
+}
+
+.card3 .card__front {
+  background-image: url(assets/coverpaint.png);
+}
+
+.card4 .card__front {
+  background-image: url(assets/coverpaint.png);
+}
+
+.card5 .card__front {
+  background-image: url(assets/paintercover.png);
+}
+
+.card6 .card__front {
+  background-image: url(assets/coverpaint.png);
+}
+
+.card7 .card__front {
+  background-image: url(assets/Conertcover2.png);
+}
+
+.card8 .card__front {
+  background-image: url(assets/crotchetCover.png);
+
+}
+
+
+.card-container {
+  display:grid; /* Use grid layout */
+  flex-wrap: wrap;
+  justify-content: center; /* Center the cards */
+  flex-basis: 90%;
+  grid-template-columns: repeat(2, .5fr); /* Create 2 equal columns */
+  gap: 6px; /* Add some space between the cards */
+  max-width: 950px; /* Optional: Set a maximum width */
+  margin: 0 auto; /* Center the container */
+  flex-grow: 1;
+ }
+
+.main-container {
+  display: flex;
+  /* gap: 20px; Space between the ad and the cards */
+  align-items: flex-start; /* Aligns the ad and card container at the top */
+  width: 100%; /* Full-width layout */
+ 
+
+}
+
+.ad-section {
+   /* Optional styling for the ad container */
+  background-color: #f0f0f0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  flex-basis: 10%; /* Takes up 10% of the container's width */
+
+}
+
+
+
+
+
+ 
+
+  
+/* @supports (background-blend-mode: multiply) {
+    .hero {
+      background-image: 
+        
+      url('assets/firstsec.png'),
+      radial-gradient(#444,#2b2a2a);
+      background-blend-mode: multiply;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover !important;
+      background-attachment: fixed;
+  } 
+}   */
+
+/* Media query for mobile devices */
+/* @media (max-width: 768px) {
+  .hero {
+      background-image: 
+          url('assets/updated\ cover.png'), 
+          radial-gradient(#444,#2b2a2a); 
+      background-blend-mode: multiply;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: scroll;  For mobile scrolling 
+  }
+} */
+
+h1,h2,h3,p{
+    margin: 0;
+    color: #adf222;
+}
+
+.container{
+    /* height:85% ; */
+    /* width: 85%;
+    max-width:70em; 
+    margin: 0 auto; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 40em; /* You can adjust the width */
+    margin: 0 auto;
+}
+
+.spacing > *+* {
+    margin-top: var(--spacer,2rem); /*this gives uniform spacing to the h1,h2..*/
+}
+
+.btn{
+    display: inline-block; /*this helps anchor */
+    text-decoration: none;
+    padding: .5em 1.25em;
+    background-color: #790b52;
+    color: var(--clr-text, white);
+    font-weight: 700;
+    text-transform: uppercase; /*make capital letters*/
+    font-size: 1.125rem;
+    border-radius:.25em ;
+    transition: 
+    transform 250ms ease-in-out,
+    opacity 250ms linear;
+  }
+  
+  .btn:hover,
+  .btn:focus{
+    transform:scale(1.1) ;
+    opacity: .9;
+}
+
+.primary-title{
+    font-size: clamp(3rem, calc(5vw + 1rem), 4.5rem); /*smallest it can be is # biggest is 4.5 */
+    font-size: 4rem;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+/*canvas*/
+canvas {
+  border: 2px solid black;
+  background-color: lightgray;
+  width: 100%;
+  height: 400px;
+  align-items: center;
+}
+
+
+ 
+
+
+/*Responsive Img*/
+@media screen and (max-width: 768px) {
+.slideshow-container {
+  max-width: 100%; /* Ensure container adapts to tablet size */
+}
+
+.product__img {
+    align-items: center;
+     
+}
+}
+
+@media screen and (min-width: 480px) {
+.slideshow-container {
+  max-width: 100%; /* Ensure container adapts to mobile size */
+}
+
+.mySlides img {
+  width: 80%; /* Ensure images fill the container width */
+  height: auto; /* Maintain aspect ratio */
+  padding: 20px;
+  margin: 40px;
+  display: flex;
+}
+}
+
+
+/*running time*/
+
+.slideshow-container .time{
+  position: absolute;
+  z-index: 1000;
+  width: 0%;
+  height: 3px;
+  background-color: #f1683a;
+  left: 0;
+  top: 0;
+}
+
+.slideshow-container.next .time,
+.slideshow-container.prev .time{
+    animation: runningTime 3s linear 1 forwards;
+}
+@keyframes runningTime{
+    from{ width: 100%}
+    to{width: 0}
+}
+
+.slideshow-container .container {
+  transition: transform 0.5s ease-in-out;
+}
+
+/*FOOTER*/
+.footer{
+  background: #2b222a;
+  color: #8a8a8a;
+  font-size: 14px;
+  /* padding: 60px 0 20px; */
+}
+
+.container-footer {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+  margin-top: auto; /* Pushes the footer to the end of the container */
+
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+
+.footer-col-1, .footer-col-2, .footer-col-3, .footer-col-4 {
+  flex-basis: 23%;
+  margin-bottom: 20px;
+  min-width: unset; 
+  margin: 0;
+}
+
+.footer-col-1 img, .footer-col-2 img {
+  width: 100%;
+  max-width: 150px;
+}
+
+.footer h3 {
+  margin-bottom: 10px;
+}
+
+.footer ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer ul li {
+  margin-bottom: 10px;
+}
+
+
+.footer p{
+  color:#f8f2f2;
+}
+
+.app-logo{
+  margin-top: 20px;
+}
+
+.app-logo img{
+  width: 140px;
+}
+
+
+.footer h3{
+  color:#fff;
+  margin-bottom: 20px;
+}
+
+.footer-col-1, .footer-col-2, .footer-col-3, .footer-col-4{
+  min-width: 250px;
+  margin-bottom: 20px;
+}
+ 
+.footer-col-2 img{
+  width:180px;
+  margin-bottom:20px;
+}
+
+.footer-col-3, .footer-col-4{
+  flex-basis:12% ;
+  text-align: center;
+
+}
+
+
+hr{
+  border:none;
+  border-top: 1px solid #555;
+
+  margin: 20px 0;
+}
+
+.copyright{
+  text-align: center;
+  margin-top: 20px;
+  color: #bbb;
+}
+
+
+ 
+
+
+
+
+
+
+
